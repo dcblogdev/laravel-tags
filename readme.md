@@ -14,9 +14,9 @@ composer require dcblogdev/laravel-tags
 
 The following tags are available:
 
-[year] = will be replaced with the current year
-[appName] = will be replaced with the app name from the config file
-[youtube url width=560 height=360] = will return a YouTube embed code. Width and height are option by default they are 560 and 360
+* [year] = will be replaced with the current year
+* [appName] = will be replaced with the app name from the config file
+* [youtube url width=560 height=360] = will return a YouTube embed code. Width and height are option by default they are 560 and 360
 
 Import the facade
 
