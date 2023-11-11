@@ -17,13 +17,12 @@ class Tags
             $params = $this->clean($matches);
 
             //if key exits use it
-            $video  = $params['//www.youtube.com/watch?v'];
-            $width  = ($params['width'] ?? '560');
+            $video = $params['//www.youtube.com/watch?v'];
+            $width = ($params['width'] ?? '560');
             $height = ($params['height'] ?? '360');
 
             return "<iframe width='$width' height='$height' src='//www.youtube.com/embed/$video' frameborder='0' allowfullscreen></iframe>";
         }, $content);
-
 
         return $content;
     }
@@ -34,7 +33,7 @@ class Tags
         $stringToProcess = is_array($data) && isset($data[1]) ? $data[1] : $data;
 
         // Ensure that the stringToProcess is actually a string.
-        if (!is_string($stringToProcess)) {
+        if (! is_string($stringToProcess)) {
             // Handle error or return an empty array
             return [];
         }
@@ -43,7 +42,7 @@ class Tags
         $params = [];
 
         foreach ($parts as $part) {
-            if (!empty($part)) {
+            if (! empty($part)) {
                 if (str_contains($part, '=')) {
                     [$name, $value] = explode('=', $part, 2);
                     $value = $this->removeCharsFromString($value);
@@ -61,6 +60,7 @@ class Tags
     private function removeCharsFromString(string $value): string
     {
         $search = ['http:', 'https:', '&quot;', '&rdquo;', '&rsquo;', '&nbsp;'];
+
         return str_replace($search, '', $value);
     }
 }
