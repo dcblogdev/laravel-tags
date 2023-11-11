@@ -2,7 +2,6 @@
 
 namespace Dcblogdev\Tags;
 
-
 class Tags
 {
     public static function get(string $string): string
