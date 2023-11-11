@@ -1,0 +1,56 @@
+{
+  "name": "dcblogdev/laravel-tags",
+  "description": "A Laravel package for adding tags to your content",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Carr",
+      "email": "dave@dcblog.dev",
+      "homepage": "https://dcblog.dev"
+    }
+  ],
+  "homepage": "https://github.com/dcblogdev/laravel-tags",
+  "keywords": [
+    "Laravel",
+    "Tags"
+  ],
+  "require-dev": {
+    "orchestra/testbench": "^8.0",
+    "pestphp/pest": "^v2.24.2",
+    "pestphp/pest-plugin-type-coverage": "^2.4",
+    "laravel/pint": "^1.13",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dcblogdev\\Tags\\": "src/",
+      "Dcblogdev\\Tags\\Tests\\": "tests"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dcblogdev\\Tags\\TagsServiceProvider"
+      ],
+      "aliases": {
+        "Tags": "Dcblogdev\\Tags\\Facades\\Tags"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "pest": "vendor/bin/pest --parallel",
+    "pest-coverage": "vendor/bin/pest --coverage",
+    "pest-type": "vendor/bin/pest --type-coverage",
+    "pint": "vendor/bin/pint"
+  }
+}
