@@ -2,8 +2,39 @@
 
 Explain what the package does.
 
-# Documentation and install instructions 
-[https://dcblog.dev/docs/laravel-tags](https://dcblog.dev/docs/laravel-tags)
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require dcblogdev/laravel-tags
+```
+
+## Usage
+
+The following tags are available:
+
+[year] = will be replaced with the current year
+[appName] = will be replaced with the app name from the config file
+[youtube url width=560 height=360] = will return a YouTube embed code. Width and height are option by default they are 560 and 360
+
+Import the facade
+
+```php
+use Dcblogdev\Tags\Facades\Tags;
+```
+
+Example usage:
+
+```php
+$content = "This is a post about [year] and [appName]";
+$content = Tags::get($content);
+
+echo $content
+```
+
+Would print
+> This is a post about 2023 and Laravel
 
 ## Change log
 
