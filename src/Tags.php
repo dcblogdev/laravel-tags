@@ -13,7 +13,7 @@ class Tags
         $content = str_replace('[appName]', config('app.name'), $content);
 
         //youtube embeds
-        $content = preg_replace_callback("(\[youtube (.*?)])is", function ($matches) {
+        $content = preg_replace_callback("(\[youtube (.*?)])is", function (array $matches) {
             $params = $this->clean($matches);
 
             //if key exits use it
