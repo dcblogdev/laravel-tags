@@ -33,4 +33,4 @@ jobs:
       run: ./vendor/bin/pint --test
 
     - name: Run test suite
-      run: composer run-script test
+      run: ./vendor/bin/pest --parallel
